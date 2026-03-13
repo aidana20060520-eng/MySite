@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aidana Aldabergen - UX/UI Designer Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Firebase SDK -->
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+      import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyANBb7LwdVEDcLu00H8qV18S8HR1OU5PXg",
+        authDomain: "mysite-5111f.firebaseapp.com",
+        projectId: "mysite-5111f",
+        storageBucket: "mysite-5111f.firebasestorage.app",
+        messagingSenderId: "320094528797",
+        appId: "1:320094528797:web:9202f39e35e2d0bec76df4",
+        measurementId: "G-ZYQPNWW7B9"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const db = getFirestore(app);
+
+      // Handle Form Submission
+      document.addEventListener('DOMContentLoaded', () => {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+          contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            try {
+              await addDoc(collection(db, "messages"), {
+                name: name,
+                email: email,
+                message: message,
+                timestamp: new Date()
+              });
+              alert("Message sent successfully!");
+              contactForm.reset();
+            } catch (error) {
+              console.error("Error adding document: ", error);
+              alert("Error sending message. Please try again.");
+            }
+          });
+        }
+      });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Aidana Aldabergen</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content hero-centered">
+                <div class="hero-text">
+                    <h1 class="hero-title">Hi, I'm <span class="highlight">Aidana Aldabergen</span></h1>
+                    <p class="hero-subtitle">Beginner UX/UI Designer from Kazakhstan</p>
+                    <p class="hero-description">
+                        Passionate about creating intuitive and beautiful digital experiences. 
+                        I'm currently learning and growing in the field of UX/UI design, 
+                        bringing creativity and dedication to every project.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate UX/UI designer from Kazakhstan, currently at the beginning of my professional journey. 
+                        While I may not have formal experience or a degree yet, I'm dedicated to learning and growing in this field.
+                    </p>
+                    <p>
+                        My strength lies in my creativity and passion for design, which I combine with a growing understanding of 
+                        user experience principles and technical skills. I'm fluent in Kazakh and Russian, with English proficiency at B2+ level.
+                    </p>
+                    <div class="languages">
+                        <h3>Languages</h3>
+                        <div class="language-list">
+                            <div class="language-item">
+                                <span class="language-name">Kazakh</span>
+                                <span class="language-level">Native</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Russian</span>
+                                <span class="language-level">Fluent</span>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">English</span>
+                                <span class="language-level">B2+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-figma"></i>
+                
+                    </div>
+                    <h3>Figma</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Medium</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="60"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML/CSS</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Beginner</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="30"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>UX Research</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Beginner</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="30"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Creativity</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Advanced</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>App Design</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Beginner</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="25"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <div class="skill-level">
+                        <span class="level-label">Advanced</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-level="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="sushico">
+                    <div class="project-image">
+                        <img src="img/sushico_img.svg" alt="Sushico Restaurant Website Design">
+                        <div class="project-overlay">
+                            <a href="https://sushico-kud3s83.public.builtwithrocket.new/" class="project-link" target="_blank" rel="noopener" data-track="project-sushico">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sushico Restaurant Website</h3>
+                        <p class="project-description">
+                            UX/UI design for a modern sushi restaurant website. 
+                            This is a vibe coded site, created to demonstrate how AI can be leveraged to minimize effort while maximizing results and maintaining high design standards.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Website</span>
+                            <span class="tag">Restaurant Design</span>
+                            <span class="tag">Figma</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="grandline">
+                    <div class="project-image">
+                        <img src="img/grandline_img.svg" alt="Grandline Project Design">
+                        <div class="project-overlay">
+                            <a href="https://dribbble.com/shots/27174392-GrandLine?utm_source=Clipboard_Shot&utm_campaign=aidana2006-05-20&utm_content=GrandLine&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=aidana2006-05-20&utm_content=GrandLine&utm_medium=Social_Share" class="project-link" target="_blank" rel="noopener" data-track="project-grandline">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Grandline App</h3>
+                        <p class="project-description">
+                            Mobile app design for a comprehensive service management system. 
+                            Focused on user-friendly interface and streamlined navigation.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Mobile App</span>
+                            <span class="tag">Service Management</span>
+                            <span class="tag">UX Research</span>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                <div class="project-card" data-project="lumen">
+                    <div class="project-image">
+                        <img src="img/lumen_img.svg" alt="Lumen Project Design">
+                        <div class="project-overlay">
+                            <a href="https://dribbble.com/shots/27179764-Lumen-Business-Dashboard?utm_source=Clipboard_Shot&utm_campaign=aidana2006-05-20&utm_content=Lumen%20-%20Business%20Dashboard&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=aidana2006-05-20&utm_content=Lumen%20-%20Business%20Dashboard&utm_medium=Social_Share" class="project-link" target="_blank" rel="noopener" data-track="project-lumen">
+                                <i class="fas fa-external-link-alt"></i>
+                                View Project
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Lumen Business Dashboard</h3>
+                        <p class="project-description">
+                            Business dashboard interface design with focus on data visualization 
+                            and efficient workflow management for professionals.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Business Dashboard</span>
+                            <span class="tag">UI Design</span>
+                            <span class="tag">Data Visualization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certificates</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="img/ibm_cert.png" alt="IBM UX Design Certificate">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>User Experience Design Fundamentals</h3>
+                        <p class="certificate-issuer">IBM SkillsBuild</p>
+                        <p class="certificate-date">March 5, 2026</p>
+                    </div>
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-image">
+                        <img src="img/udemy.png" alt="Udemy UI Design Certificate">
+                    </div>
+                    <div class="certificate-content">
+                        <h3>UI Design Bootcamp. Master Typography, Colour &amp; Grids</h3>
+                        <p class="certificate-issuer">Udemy</p>
+                        <p class="certificate-date">July 14, 2025 (8.5 total hours)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Connect!</h3>
+                    <p>
+                        I'm always open to discussing new opportunities, 
+                        creative projects, or just having a chat about design.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>aidanaa2006@icloud.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Kazakhstan</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/aidana-aldabergen-a4bbb12ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn" data-track="social-linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/aidana20060520-eng" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" data-track="social-github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://dribbble.com/aidana-aldabergen" target="_blank" rel="noopener" class="social-link" aria-label="Dribbble" data-track="social-dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="https://www.behance.net/ponywilliea1" target="_blank" rel="noopener" class="social-link" aria-label="Behance" data-track="social-behance">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="mailto:aidanaa2006@icloud.com" class="btn btn-primary contact-btn" data-track="email-direct">
+                            <i class="fas fa-envelope"></i>
+                            Send Email
+                        </a>
+                        <button type="button" id="downloadCV" class="btn btn-secondary contact-btn" data-track="download-cv">
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </button>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Aidana Aldabergen. All rights reserved.</p>
+                <p>Designed with ❤️ and passion for UX/UI</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
