@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 487" width="1024" height="487" role="img" aria-label="InsightX - AI insights from your Notion">
+  <defs>
+    <linearGradient id="ix-brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="ix-notion" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9b6bf2"/>
+      <stop offset="0.5" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#e2c7ff"/>
+    </linearGradient>
+    <linearGradient id="ix-btn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a875f5"/>
+      <stop offset="1" stop-color="#e7d3ff"/>
+    </linearGradient>
+    <radialGradient id="ix-glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0" stop-color="#4a4a6e" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#4a4a6e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ix-violet" cx="55%" cy="98%" r="55%">
+      <stop offset="0" stop-color="#7c3aed" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ix-btnglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c084fc" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="ix-avatar">
+      <circle cx="917" cy="19" r="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1024" height="487" fill="#0a0a0e"/>
+  <rect x="0" y="0" width="1024" height="487" fill="url(#ix-glow)"/>
+  <rect x="0" y="0" width="1024" height="487" fill="url(#ix-violet)"/>
+
+  <!-- Nav bar -->
+  <circle cx="56" cy="20" r="14" fill="url(#ix-brand)"/>
+  <path d="M56 12 L57.2 16.8 L62 18 L57.2 19.2 L56 24 L54.8 19.2 L50 18 L54.8 16.8 Z" fill="#ffffff"/>
+  <text x="76" y="25" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="-0.3">InsightX</text>
+
+  <text x="433" y="24" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#a1a1aa">Features</text>
+  <text x="491" y="24" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#a1a1aa">Pricing</text>
+  <text x="540" y="24" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#a1a1aa">FAQ</text>
+
+  <text x="866" y="24" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="12.5" fill="#a1a1aa">Dashboard</text>
+  <circle cx="917" cy="19" r="12" fill="url(#ix-brand)"/>
+  <g clip-path="url(#ix-avatar)">
+    <circle cx="917" cy="30" r="7" fill="#ffffff"/>
+    <circle cx="917" cy="15.5" r="3.6" fill="#ffffff"/>
+  </g>
+
+  <line x1="0" y1="40" x2="1024" y2="40" stroke="#ffffff" stroke-opacity="0.06"/>
+
+  <!-- Beta pill -->
+  <rect x="450" y="97" width="124" height="26" rx="13" fill="#ffffff" fill-opacity="0.04" stroke="#ffffff" stroke-opacity="0.10"/>
+  <path d="M468 106.5 L468.8 109.2 L471.5 110 L468.8 110.8 L468 113.5 L467.2 110.8 L464.5 110 L467.2 109.2 Z" fill="#c4b5fd"/>
+  <text x="524" y="114" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="600" fill="#c4b5fd">Free during beta</text>
+
+  <!-- Headline -->
+  <text x="512" y="190" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="78" font-weight="800" fill="#f4f4f5" letter-spacing="-2.5">AI insights from</text>
+  <text x="512" y="264" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="78" font-weight="800" fill="url(#ix-notion)" letter-spacing="-2.5">your Notion</text>
+
+  <!-- Subtitle -->
+  <text x="512" y="320" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" fill="#a1a1aa">Turn your workspace into a source of clarity, decisions, and</text>
+  <text x="512" y="342" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" fill="#a1a1aa">growth.</text>
+
+  <!-- Buttons -->
+  <ellipse cx="421" cy="401" rx="110" ry="32" fill="url(#ix-btnglow)"/>
+  <rect x="339" y="380" width="164" height="41" rx="20.5" fill="url(#ix-btn)"/>
+  <text x="404" y="405" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">Get Started Free</text>
+  <path d="M470 400.5 L478 400.5 M475 397.5 L478 400.5 L475 403.5" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="517" y="380" width="168" height="41" rx="20.5" fill="#18181f" stroke="#ffffff" stroke-opacity="0.10"/>
+  <text x="601" y="405" text-anchor="middle" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff">See how it works</text>
+</svg>
